@@ -5,6 +5,7 @@ import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,7 +18,8 @@ public class Application {
 	DataSource dataSource;
 
 	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
+		 ApplicationContext context = SpringApplication.run(Application.class, args);
+//		SpringApplication.run(Application.class, args);
 	}
 
 	@GetMapping("/hello")
